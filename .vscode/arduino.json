@@ -1,0 +1,5 @@
+{
+    "sketch": "Temperature_Reader.ino",
+    "board": "arduino:avr:uno",
+    "intelliSenseGen": "global"
+}
