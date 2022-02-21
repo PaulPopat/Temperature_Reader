@@ -8,6 +8,7 @@
 #define MIN_TEMP 23
 #define MAX_TEMP 40
 #define TEMP_RANGE (MAX_TEMP - MIN_TEMP)
+#define CURVE_FACTOR 1.25
 
 namespace PWM
 {
@@ -37,7 +38,7 @@ namespace PWM
 
     float UpdateTemperature(float celcius) const
     {
-      float duty = pow((celcius - MIN_TEMP) / TEMP_RANGE, 1.5);
+      float duty = pow((celcius - MIN_TEMP) / TEMP_RANGE, CURVE_FACTOR);
       duty = duty < 0
                  ? 0
              : duty > 1
